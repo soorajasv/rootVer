@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+    .no-js #loader { display: none;  }
+    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+    .se-pre-con {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url(img/loader3.gif) center no-repeat #fff;
+    }
+    .shadow
+    {
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+/*        #myBtn {
+        	display: none; 
+        	position: fixed; 
+        	bottom: 20px; 
+        	right: 30px; 
+        	z-index: 99; 
+        	border: none; 
+        	outline: none; 
+        	background-color: #039be5; 
+        	color: white; 
+        	cursor: pointer; 
+        	padding: 15px; 
+        	border-radius: 10px; 
+        	font-size: 18px;
+    	}
+
+		#myBtn:hover {
+			background-color: #555; 
+          }*/
+
+          #go-top {
+             width:40px;height:36px;
+             background-color:#777;
+             position:relative;
+             border-radius:2px;
+             position:fixed;right:5px;bottom:25px;
+             cursor:pointer;display:none;
+         }
+         #go-top:after {
+             content:" ";
+             position:absolute;left:13px;top:12px;
+             border-top:4px solid #fff;border-right:4px solid #fff;
+             width:12px;height:12px;
+             transform:rotate(-45deg);
+         }
+         #go-top:hover {
+             background-color:#333;
+         }
+
+     </style>
+
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+     <script>
+       $(window).load(function() {
+
+		//$(".se-pre-con").fadeOut("slow");;
+        setTimeout(function(){
+            $(".se-pre-con").fadeOut('slow', function () {
+            });
+        },500);
+    });
+
+</script> 
+
+<script type="text/javascript">
+	$(function () {
+		var top=$("#go-top");
+		$(window).scroll(function () {
+			($(window).scrollTop() > 300) ? top.show(300) : top.hide(200);
+			$("#go-top").click(function () {
+				$('body,html').animate({scrollTop:0});
+				return false();
+			})
+		});
+	});
+	// // When the user scrolls down 20px from the top of the document, show the button
+	// window.onscroll = function() {scrollFunction()};
+
+	// function scrollFunction() {
+ //    	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+ //        	document.getElementById("myBtn").style.display = "block";
+ //    	} else {
+ //        	document.getElementById("myBtn").style.display = "none";
+ //    	}
+	// }
+
+	// // When the user clicks on the button, scroll to the top of the document
+	// function topFunction() {
+ //    	document.body.scrollTop = 0; // For Safari
+ //    	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	// }
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="favicon.png" />
+
+<title>Helping Hands</title>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+<!-- Plugin CSS -->
+<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/creative.min.css" rel="stylesheet">
+<link href="css/helpinghands.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/map.css">
+
+</head>
+
+<body id="page-top" style="background-color: white">
+   <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
+   <div id="go-top"></div>
+   <div class="se-pre-con"></div>
+
+
+
+   <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Helping Hands</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="d3maps.html">Know More</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="./mapApp/index.php">Find CHILDCARE</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact US</a>
+          </li>
+      </ul>
+  </div>
+</div>
+</nav>
+
+<header class="masthead text-center text-white d-flex" id="header">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="text-uppercase" style="font-family: sans-serif;">
+          <strong>Helping Hands</strong>
+      </h1>
+      <br>
+
+  </div>
+  <div class="col-lg-8 mx-auto" >
+    <p class="text-faded mb-5" style="color:white;text-align: center;">Helping Hands aims to help mothers of young children to search for the  most suitable childcare services in Greater Melbourne area</p>
+
+    <a class="btn btn-primary btn-xl js-scroll-trigger" href="./mapApp/index.php">Find a suitable childcare</a>
+</div>
+</div>
+<div class="bottomright">Photo by Peter Fazekas from Pexels</div>
+</div>
+</header>
+
+    <!-- <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Helping Hands is a project that can help ......</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#infographic">Get Started!</a>
+          </div>
+        </div>
+      </div>
+  </section> -->
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <center><h3> Things You Need to Know </h3></center>
+
+  <!-- test banner -->
+
+
+
+
+  <!-- #region Jssor Slider Begin -->
+  <!-- Generator: Jssor Slider Maker -->
+  <!-- Source: https://www.jssor.com -->
+  <script src="js/jssor.slider-27.1.0.min.js" type="text/javascript"></script>
+
+  <!-- Include javascript for slider -->
+  <script type="text/javascript">
+    jssor_1_slider_init = function() {
+
+        var jssor_1_SlideoTransitions = [
+        [{b:-1,d:1,o:-0.7}],
+        [{b:900,d:2000,x:-379,e:{x:7}}],
+        [{b:900,d:2000,x:-379,e:{x:7}}],
+        [{b:-1,d:1,o:-1,sX:2,sY:2},{b:0,d:900,x:-171,y:-341,o:1,sX:-2,sY:-2,e:{x:3,y:3,sX:3,sY:3}},{b:900,d:1600,x:-283,o:-1,e:{x:16}}]
+        ];
+
+        var jssor_1_options = {
+          $AutoPlay: 1,
+          $SlideDuration: 800,
+          $SlideEasing: $Jease$.$OutQuint,
+          $CaptionSliderOptions: {
+            $Class: $JssorCaptionSlideo$,
+            $Transitions: jssor_1_SlideoTransitions
+        },
+        $ArrowNavigatorOptions: {
+            $Class: $JssorArrowNavigator$
+        },
+        $BulletNavigatorOptions: {
+            $Class: $JssorBulletNavigator$
+        }
+    };
+
+    var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+    /*#region responsive code begin*/
+
+    var MAX_WIDTH = 3000;
+
+    function ScaleSlider() {
+        var containerElement = jssor_1_slider.$Elmt.parentNode;
+        var containerWidth = containerElement.clientWidth;
+
+        if (containerWidth) {
+
+            var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+            jssor_1_slider.$ScaleWidth(expectedWidth);
+        }
+        else {
+            window.setTimeout(ScaleSlider, 30);
+        }
+    }
+
+    ScaleSlider();
+
+    $Jssor$.$AddEvent(window, "load", ScaleSlider);
+    $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+    $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+    /*#endregion responsive code end*/
+};
+</script>    
+
+<!-- slider js ends-->
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+
+<!-- INclude style for this app -->
+<link href="css/slide.css" rel="stylesheet" type="text/css" />
+
+<!-- Style ends -->
+
+<div id="jssor_1" class="shadow" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;padding: 10px;">
+    <!-- Loading Screen -->
+    <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+    </div>
+    <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+        <div data-p="225.00">
+            <img data-u="image" src="img/infographic/Infographic/info1.png" style="padding: 60px 75px 60px 75px;" class= "shadow"/>
+
+        </div>
+        <div data-p="225.00">
+            <img data-u="image" src="img/infographic/Infographic/Info2.png"  style="padding: 60px 75px 60px 75px;"/>
+        </div>
+        <div data-p="225.00">
+            <img data-u="image" src="img/infographic/Infographic/Info3.png" style="padding: 60px 75px 60px 75px;" />
+<!--                 <div style="position:absolute;top:30px;left:30px;width:480px;height:130px;background-color:rgba(255,188,5,0.8);font-family:'Roboto Condensed',sans-serif;font-size:40px;color:#000000;line-height:1.5;padding:5px 5px 5px 5px;box-sizing:border-box;">TOUCH SWIPE
+<br />
+                    RESPONSIVE SLIDER
+                </div>
+                <div style="position:absolute;top:300px;left:30px;width:480px;height:130px;background-color:rgba(255,188,5,0.8);font-family:'Roboto Condensed',sans-serif;font-size:30px;color:#000000;line-height:1.27;padding:5px 5px 5px 5px;box-sizing:border-box;">Build your slider with anything, includes image, svg, text, html, photo, picture content</div> -->
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb032" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:65px;height:65px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" style="stroke:black;" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:65px;height:65px;top:0px;right:25px; " data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;" >
+                <polyline class="a" style="stroke:black;" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>      
+
+
+    
+    <!-- tets banner ends -->
+    <section id = "knowmore" style="background-color: #c8e6c9;">
+      <div class = "container">
+         <div class = "row">
+            <div class="col-lg-8 mx-auto">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Information on child care</a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                            <div class="panel-body">Child care and early learning provides the foundation for children to develop in a safe environment while also having the opportunity to socialise with other children. In addition to benefiting the child's early years' development, child care and early learning also helps working families to return to work.
+                            On this page you will find links to information to assist you make an informed choice on child care and early learning services as well as details of financial assistance to help reduce the out-of-pocket costs of child care.
+                            <br/>
+                            <br/>
+                            Need more information?
+                            <a href="https://www.mychild.gov.au/">https://www.mychild.gov.au/</a>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">What are my child care and early learning options?</a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">You might need to leave your child in someone else's care - that is, child care - if you have work, study or other commitments. Choosing the right child care and early learning service can be a difficult decision for families. Your decision will depend on your family's needs and the environment with which you and your child will feel most comfortable.<br/>
+                            As well as providing care, child care and early learning services provide an opportunity for your child to develop social, emotional and learning skills.<br/>
+                            When deciding on the type of care that is best for your child, you may want to ask yourself:<br/>
+                                <ul>
+                                    <li>How many hours of care do I need? The whole day? Just mornings? Just afternoons? Just a few hours a week? Or just occasionally, like when I have an appointment and need someone to look after my children?</li>
+                                    <li>Do I want my child cared for in a home environment or in a centre?</li>
+                                    <li>What kind of qualifications and experience do staff members have?</li>
+                                    <li>Does the service offer a preschool program?</li>
+                                    <li>What learning and play opportunities do I want my child to have?</li>
+                                    <li>What kind of routine will my child have?</li>
+                                    <li>Do I want the service to provide lunch? Can I have a look at a sample meal plan?</li>
+                                    <li>Does the centre provide nappies for children under the age of 2?</li>
+                                    <li>What is the carer-to-child ratio?</li>
+                                    <li>Can I claim Child Care Benefit and Child Care Rebate if I choose a certain child care and learning service?</li>
+                                </ul>
+                            <br/>
+                            Here is a quick description of the different types of child care and early learning services to help you make your decision.
+                            <br/>
+                            <br/>
+                                <ul>
+                                    <li>Long Day Care</li>
+                                    <li>Family Day Care</li>
+                                    <li>In Home Care</li>
+                                    <li>Outside School Hours Care</li>
+                                    <li>Occasional Care</li>
+                                </ul>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+                            </h4>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat.</div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="section-heading">Information on child care</h2>
+                <p class="mb-5" align="left">
+                  Child care and early learning provides the foundation for children to develop in a safe environment while also having the opportunity to socialise with other children. In addition to benefiting the child's early years' development, child care and early learning also helps working families to return to work.
+                  On this page you will find links to information to assist you make an informed choice on child care and early learning services as well as details of financial assistance to help reduce the out-of-pocket costs of child care.
+                  <br/>
+                  <br/>
+                  Need more information?
+                  <a href="https://www.mychild.gov.au/">https://www.mychild.gov.au/</a>
+                  <hr>
+                  <h2 class="section-heading">What are my child care and early learning options?</h2>
+                  <p class="mb-5" align="left">
+                      You might need to leave your child in someone else's care - that is, child care - if you have work, study or other commitments. Choosing the right child care and early learning service can be a difficult decision for families. Your decision will depend on your family's needs and the environment with which you and your child will feel most comfortable.<br/>
+                      As well as providing care, child care and early learning services provide an opportunity for your child to develop social, emotional and learning skills.<br/>
+                      When deciding on the type of care that is best for your child, you may want to ask yourself:<br/>
+                      <ul>
+                         <li>How many hours of care do I need? The whole day? Just mornings? Just afternoons? Just a few hours a week? Or just occasionally, like when I have an appointment and need someone to look after my children?</li>
+                         <li>Do I want my child cared for in a home environment or in a centre?</li>
+                         <li>What kind of qualifications and experience do staff members have?</li>
+                         <li>Does the service offer a preschool program?</li>
+                         <li>What learning and play opportunities do I want my child to have?</li>
+                         <li>What kind of routine will my child have?</li>
+                         <li>Do I want the service to provide lunch? Can I have a look at a sample meal plan?</li>
+                         <li>Does the centre provide nappies for children under the age of 2?</li>
+                         <li>What is the carer-to-child ratio?</li>
+                         <li>Can I claim Child Care Benefit and Child Care Rebate if I choose a certain child care and learning service?</li>
+                     </ul>
+                     <br/>
+                     Here is a quick description of the different types of child care and early learning services to help you make your decision.
+                     <br/>
+                     <br/>
+                     <ul>
+                         <li>Long Day Care</li>
+                         <li>Family Day Care</li>
+                         <li>In Home Care</li>
+                         <li>Outside School Hours Care</li>
+                         <li>Occasional Care</li>
+                     </ul>
+                     <hr>
+                     <h3 class="section-heading">Long day care</h3>
+                     <br/>
+                     Long Day Care is sometimes referred to as centre-based care and is generally provided in a building or part of a building that has been created specifically for use as a child care centre.<br/>
+                     <br/>
+                     Centres usually operate between 7:30 am and 6:00 pm and offer professional care for children aged 0-6. Children are usually grouped in rooms according to age and developmental stage.<br/><br/>
+
+                     Child care is usually available for all day or part of the day at a centre. Some centres offer morning or afternoon sessions.<br/><br/>
+
+                     Many centres offer meals throughout the day including morning tea, lunch and afternoon tea. The types of meals vary from centre to centre. If a centre does not offer meals then families will need to provide their own.<br/><br/>
+
+                     Most Long Day Care centres will have an early education component to their program so children will learn as they are cared for.<br/><br/>
+
+                     Long Day Care centres are run by private companies, local councils, community organisations, individuals, non-profit organisations or by employers for their staff.
+                     <br/><br/>
+                     The majority of Long Day Care centres are <a href="https://www.mychild.gov.au/childcare-information/approved">approved child care services</a>. This means that families using the service may be eligible for Child Care Benefit and the Child Care Rebate. Approved services must also show that they are meeting certain quality standards.
+                     <br/><br/>
+                     <hr>
+                     <h3 class="section-heading">Family Day Care</h3>
+                     <br/>
+                     Family Day Care (FDC) services deliver flexible home-based education and care for children via a network of FDC educators. FDC services support and administer the care that is provided, on their behalf, in educators’ homes.
+                     <br/><br/>
+                     FDC services are responsible for the effective operation of all components of FDC, including recruiting, training and supporting educators; monitoring care provision; and providing advice, support and information for parents.
+                     <br/><br/>
+                     FDC services can provide flexible care, including all-day care, part-time, casual, overnight, before and after school care, and care during school holidays. Educators do not have any legal right to independently enter into a care arrangement for Child Care Benefit approved care. However, service operators may authorise educators (acting as an agent for their service) to enter into care arrangements on their behalf.
+                     <br/><br/>
+                     FDC educators and services must meet their obligations under the National Quality Framework for Early Childhood Education and Care and comply with the Early Childhood Services Education and Care National Law and National Regulations, and any other applicable state and territory regulations, when providing care to children.
+                     <br/><br/>
+                     An educator may provide care in their home for the maximum number of children, including their own children, in accordance with the National Law and National Regulations.
+                     <br/><br/>
+                     The majority of Family Day Care services are approved child care services. This means that families using the service may be eligible for Child Care Benefit and the Child Care Rebate.
+                     <br/><br/>
+                     <hr>
+                     <h3 class="section-heading">In Home Care</h3>
+                     <br/>
+                     In Home Care is similar to Family Day Care but the professional carer looks after the child in your child's home. However, it is not widely available and usually only an option where other forms of care are not suitable.
+                     <br/><br/>
+                     In Home Care is suitable for families with children who cannot be cared for by other child care services or whose circumstances mean that an existing child care service cannot meet their needs and to whom one or more of the following applies:
+                     <br/><br/>
+                     <ul>
+                         <li>the child has, or lives with another child who has, an illness or disability</li>
+                         <li>the child's guardian (or guardian's partner) has an illness or disability that affects their ability to care for the child</li>
+                         <li>the child lives in a rural or remote area</li>
+                         <li>the work hours of the child's guardian (or guardian's partner) are hours when no other approved child care service is available</li>
+                         <li>the child's guardian (or guardian's partner) is caring for three or more children who have not yet started school.</li>
+                     </ul>
+                     <hr>
+                     <h3 class="section-heading">Outside School Hours Care</h3>
+                     <br/>
+                     Outside School Hours Care centres provide care for primary school aged children, before and after school (7:30 am -9:00 am and 3:00 pm -6:00 pm), during school holidays and on pupil-free days.
+                     <br/><br/>
+                     Outside School Hours Care (OSHC) is also referred to as Out-Of-School Hours (OOSH) care in some states or territories.
+                     <br/><br/>
+                     Vacation Care is a type of Outside School Hours Care that includes indoor and outdoor activities. These centres are sometimes run by the same organisation that runs before and after-school care.
+                     <br/><br/>
+                     Centres are usually located on primary school sites in the school hall and/or playground. Some centres are located in a child care centre, community facility or outside-school hours care centre near the primary school.
+                     <br/><br/>
+                     Many centres offer a snack as well as the <a href="https://www.sportingschools.gov.au/">Sporting Schools</a> exercise program.
+                     <br/><br/>
+                     The majority of Outside School Hours Care centres are approved child care services. This means that families using the service may be eligible for the Child Care Benefit and Child Care Rebate. Approved services must also show that they are meeting certain quality standards.
+                     <br/><br/>
+                     <hr>
+                     <h3 class="section-heading">Occasional Care</h3>
+                     <br/>
+                     Occasional Care offers professional care for children on a casual basis. This service is suitable for families who do not need child care on a regular basis but would like someone to look after their children occasionally, for example when they have a medical or other appointment.
+                     <br/><br/>
+                     Most Occasional Care centres have flexible operating hours and can cater for children whose parents work irregular or unpredictable hours (e.g. shift workers).
+                     <br/><br/>
+                     <hr>
+                     <h3 class="section-heading">Child care waiting lists</h3>
+                     <br/>
+                     There may be situations where there are no vacancies at a child care and early learning service you wish to use. Some child care and early learning services have waiting lists to help determine the next placement. Where demand for child care is high, all approved services with the exception of Occasional Care must adhere to <a href="https://www.education.gov.au/priority-filling-child-care-places">Priority of Access Guidelines</a> to ensure there is a fair child care system.
+                     <br/><br/>
+                     The system ensures that, where there are vacancies or a waiting list for child care services, places are allocated to families with the greatest need for child care. These guidelines only apply to Child Care Benefit approved child care services with the exception of Occasional Care.
+                     <br/><br/>
+                     Every approved service with the exception of Occasional Care has to abide by the guidelines and tell you about them when you enrol your child into care.
+                     <br/><br/>
+                     More Information: <a href="https://www.education.gov.au/fact-sheet-kit-families-using-child-care-0">Fact Sheet Kit for Families Using Child Care</a>
+                 </p>
+             </div>
+         </div>
+     </div>
+ </section>
+
+
+
+ <section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="section-heading">Let's Get In Touch!</h2>
+        <hr class="my-4">
+        <p class="mb-5">Having any suggestion or idea? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+    </div>
+</div>
+<div class="row">
+  <div class="col-lg-4 ml-auto text-center">
+    <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+    <p>0469-859-511</p>
+</div>
+<div class="col-lg-4 mr-auto text-center">
+    <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+    <br><a href="mailto:info.helpinghands.tj@gmail.com">
+      info.helpinghands.tj@gmail.com
+  </a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
+
+</body>
+
+</html>

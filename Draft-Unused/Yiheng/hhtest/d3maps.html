@@ -1,0 +1,199 @@
+<head>
+     
+        <style>
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(img/loader3.gif) center no-repeat #fff;
+        }
+            
+            
+
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+ <script>
+	$(window).load(function() {
+		
+		//$(".se-pre-con").fadeOut("slow");;
+        setTimeout(function(){
+            $(".se-pre-con").fadeOut('slow', function () {
+            });
+        },5000);
+	});
+
+</script> 
+      
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <title>Helping Hands</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/helpinghands.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
+    
+    <!-- Load nav bar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+
+  </head>
+
+
+
+
+<body>
+    
+    <!-- Loader div -->
+    <div class="se-pre-con"></div>
+    <!-- Loader div ends -->
+    
+    
+    <!-- Navigation -->
+
+    
+     <div id="nav-placeholder">
+
+            </div>
+
+            <script>
+            $(function(){
+              $("#nav-placeholder").load("navIndex.html");
+            });
+            </script>
+    
+
+    <!-- Navigation ends -->
+    
+    
+    
+   <div id="map" >
+      <link rel="stylesheet" type="text/css" href="mapstyle.css">
+      <script src="http://d3js.org/d3.v3.min.js"></script>
+      <script src="http://d3js.org/topojson.v0.min.js"></script>
+      <script src="colorbrewer.js" type="text/javascript"></script>
+      <center class="map" style="margin-top: 100px;">
+
+        <h2 style="font-family: georgia;">Average Childcare costs in Council</h2>
+        <img src="img/colorbar.PNG"/>
+        <p>Darker colour areas are having higher cost</p>
+
+        <div style="display: none;">
+        <span style="color: black;">Type of child care service: </span>
+          <select id="myListType" name = "Type of Child Care Service">
+            <option value = "ASC">ASC</option>
+            <option value = "BSC">BSC</option>
+            <option value = "LDC">LDC</option>
+          </select>
+        <span style="color: black;">Year Interested: </span>
+          <select id="myListYear">
+            <option value = "2012">2012</option>
+            <option value = "2013">2013</option>
+            <option value = "2014">2014</option>
+            <option value = "2015">2015</option>
+          </select>
+        <span style="color: black;">Age Group: </span>
+          <select id="myListGroup">
+            <option value = "4">0-4</option>
+            <option value = "5">5-9</option>
+          </select>
+        <button class="btn btn-light btn-xl sr-button" id="myButton" onclick="inputData();">Update Map</button>
+      </div>
+      <script src="mainscript.js" type="text/javascript"></script>
+          <p style="font-size: 13px">Data sourced from Department of Education and Training (Child Care Administrative Data),Australian Bureau of Statistics (SA3 Regions and Census 2016 Data)</p>
+          
+         
+          
+          <br><br><br><br>
+      <div class="sub" class="shadow">
+        <h2>Average Childcare costs in Suburbs</h2>
+        
+          
+          <img src = "img/suburbImage.png" width = "300" height = "70"/>
+          <p>Darker colour areas are having higher cost</p>
+        <script src="suburbmap.js" type="text/javascript">
+          <link rel="stylesheet" type="text/css" href="suburbmap.css">
+        </script>
+      </div>
+
+      </center>
+    </div>
+
+    <div style="width: 100%; display: table;    margin-left: 125px;margin-right: 175px;">
+            <div style="display: table-row">
+                <div style="width: 400px; display: table-cell;"> 
+
+                <div class = "text" style="display:table; margin:0 auto;" >
+          <h4>5 Most Expensive Suburbs Per Day </h4>
+        </div><br>
+                    
+
+
+        <div class="chart" style="display:table; margin:0 auto;" >
+          <div style="width: 438px;">Vermont South<span style="font-size: large;color : white;">($219.01) </span></div>
+          <div style="width: 438px;">Vermont<span style="font-size: large;color : white;"> ($219.01)</span></div>
+          <div style="width: 404px;">Flemington<span style="font-size: large;color : white;"> ($202.61)</span></div>
+          <div style="width: 406px;">Kensisgton<span style="font-size: large;color : white;">        ($202.61)</span></div>
+          <div style="width: 356px;">Glen Iris<span style="font-size: large;color : white;"> ($178.21)</span></div>
+        </div>
+
+            
+        
+            
+        
+        </div>
+                
+                
+        <div style="display: table-cell;"> 
+        
+        
+            <div class = "text" style="display:table; margin:0 auto;" >
+              <h4>5 Cheapest Suburbs Per Day</h4><br>
+            </div>
+
+
+          <div class="chart" style="display:table; margin:0 auto;" >
+              <div style="width: 350px; background-color: #52be80">Keilor Downs<span style="font-size: large;color : white;"> ($85.5)</span></div>
+              <div style="width: 350px;background-color: #52be80">Taylors Lakes<span style="font-size: large;color : white;"> ($85.5)</span></div>
+              <div style="width: 360px;background-color: #52be80">Cockatoo<span style="font-size: large;color : white;"> ($86.01)</span></div>
+              <div style="width: 370px;background-color: #52be80">Avondale Heights<span style="font-size: large;color : white;"> ($87.79)</span></div>
+              <div style="width: 400px;background-color: #52be80">Frankston North<span style="font-size: large;color : white;"> ($90.01)
+                  </span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body> 

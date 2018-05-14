@@ -1,0 +1,139 @@
+#map {
+        height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #type {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 10px 0 13px;
+        text-overflow: ellipsis;
+        width: 90%;
+    }
+        #rating {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 10px 0 13px;
+        text-overflow: ellipsis;
+        width: 90%;
+    }
+    .controls {
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 30px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    #origin-input,
+    #destination-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 10px 0 13px;
+        text-overflow: ellipsis;
+        width: 90%;
+    }
+
+    #origin-input:focus,
+    #destination-input:focus {
+        border-color: #4d90fe;
+    }
+
+    #mode-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        margin-left: 12px;
+        padding: 5px 10px 0px 11px;
+    }
+
+    #mode-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+    }
+
+    #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+    }
+
+    .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+    }
+
+    .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 90%;
+    }
+
+    #pac-input:focus {
+        border-color: #4d90fe;
+    }
+
+    #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+    }
+
+    #target {
+        width: 90%;
+    }
+    #legend {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid #000;
+    }
+    #legend h3 {
+        margin-top: 0;
+    }
+    #legend img {
+        vertical-align: middle;
+    }

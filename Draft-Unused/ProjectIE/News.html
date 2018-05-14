@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Melbourne Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        var url = 'https://newsapi.org/v2/top-headlines?' +
+                    'country=au&'+
+                    
+
+                  'q=Child&' +
+                  'from=2018-01-03&' +
+                  'sortBy=popularity&' +
+                  'apiKey=b8d6e13875154e3a9cfbcef7587d4373';
+
+        var req = new Request(url);
+
+        fetch(req)
+            .then(function(response) {
+                console.log(response.json());
+            })
+    </script>
+</body>
+
+</html>

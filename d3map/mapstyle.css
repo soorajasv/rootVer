@@ -1,0 +1,87 @@
+<style>
+    nav {
+        background-color: #40c4ff
+    }
+
+    .nav {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    path {
+        stroke: black;
+        stroke-width: 0.5px;
+        fill: grey;
+    }
+
+    div.tooltip {
+        position: absolute;
+        text-align: left;
+        width: 230px;
+        height: 76px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: black;
+        color: white;
+        border: 1px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+  div.tooltipsub {
+        
+        text-align: left;
+        width: 230px;
+        height: 55px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: black;
+        color: white;
+        border: 1px;
+        border-radius: 8px;
+        pointer-events: none;
+    }
+
+
+    svg {
+        border-style:solid;
+        border-width:3px;
+        background: #bbdefb;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .legend {
+        font-size: 12px;
+    }
+
+    svg.map {
+        margin: 40px auto;
+        display: block;
+    }
+
+    .chart div {
+        background-color: #f05f40;
+        text-align: right;
+        padding: 3px;
+        margin: 4px;
+        color: #343434;  
+
+    }
+    .chart2 div {
+        background-color: #f05f40;
+        text-align: right;
+        padding: 3px;
+        margin: 4px;
+        color: #343434;
+        width : 50%;
+        float:right;
+        
+    }
+    .text div {
+        text-align: center;
+  
+    }
+
+
+
+</style>
