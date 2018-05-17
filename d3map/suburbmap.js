@@ -109,11 +109,11 @@ console.log("7");
                             .style("opacity", .9);
                         div.html("Suburb: " + 
                                 de.properties.vic_loca_2 + "</br>" +
-                                "Child Care Services: " + NoChildCare + "</br>" +
+                                // "Child Care Services: " + NoChildCare + "</br>" +
                                 "Average Fees Per Day: " + RateFees
                             )
                             .style("left", (d3.event.pageX) + "px")
-                            .style("top", (d3.event.pageY - 28) + "px");
+                            .style("top", (d3.event.pageY - 14) + "px");
                         return 'orange';
                     })
                 })

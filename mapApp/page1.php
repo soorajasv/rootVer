@@ -142,7 +142,7 @@
             font-family: Roboto;
             font-size: 15px;
             font-weight: 300;
-            margin-left: 12px;
+            /*margin-left: 12px;*/
             padding: 0 10px 0 13px;
             text-overflow: ellipsis;
             width: 100%;
@@ -151,15 +151,20 @@
 
         .tt-hint {
             visibility: hidden;
-            display: disabled;
+            /*display: disabled;*/
             background-color: #fff;
             font-family: Roboto;
             font-size: 15px;
             font-weight: 300;
-            margin-left: 12px;
+            /*margin-left: 12px;*/
             padding: 0 11px 0 13px;
             text-overflow: ellipsis;
-            width: 170px;
+            width: 100%;
+        }
+        .twitter-typeahead {
+            width: 70%;
+            margin-left: 12px;
+            background-color: #fff;
         }
 
         #childcare {
@@ -167,10 +172,10 @@
             font-family: Roboto;
             font-size: 15px;
             font-weight: 300;
-            margin-left: 12px;
+            /*margin-left: 12px;*/
             padding: 0 11px 0 13px;
             text-overflow: ellipsis;
-            width: 170px;
+            width: 100%;
         }
 
         .tt-dropdown-menu {
@@ -185,9 +190,9 @@
             font-family: Roboto;
             font-size: 15px;
             font-weight: 300;
-            margin-left: 12px;
+            /*margin-left: 12px;*/
             padding: 0 10px 0 13px;
-            width: 170px;
+            width: 100%;
 
         }
 
@@ -318,7 +323,7 @@
 
         <div id="sidebar" style="align-content: center; float: left; width :20%;  height:92%; margin-left: 1%;padding: 10px; margin-bottom: 1%; background-color: #edece4; background-image: url('https://www.transparenttextures.com/patterns/blizzard.png');color: white; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2);">
 
-            <label for="type" style="align-content: space-around;font-size: 16px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px">Search for childcare</label>
+            <label for="type" style="align-content: space-around;font-size: 10px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px">Search for childcare</label>
             <br>
             <input name="city" id="childcare" style="margin-top: 0px;" class="controls" type="text" placeholder="Childcare name ">
 
@@ -326,11 +331,11 @@
             <button id="go" style="float:right; cursor:pointer;" title="Find the Childcare centre" onclick="resetName = true; resetListing(); getName();"></button>
 
             <br>
-            <label for="type" style="align-content: space-around;font-size: 16px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px">Search by suburb</label>
+            <label for="type" style="align-content: space-around;font-size: 10px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px">Search by Postcode</label>
             <input id="pac-input" style="margin-top: 0px" class="controls" type="text" placeholder="Enter Postcode or Suburb name">
-            <button id="suburbPlace" style="float:right; cursor:pointer;" title="Check for your current suburb" onclick="goToMyLocation(map, myPostCode, true);"></button>
+            <button id="suburbPlace" style="float:right; cursor:pointer;" title="Check for your current suburb" onclick="document.getElementById('pac-input').value = myPostCode ;goToMyLocation(map, myPostCode, true);"></button>
 
-            <label for="" style="align-content: space-around;font-size: 16px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px ">Search along way</label>
+            <label for="" style="align-content: space-around;font-size: 10px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px ">Search along way</label>
 
             <input id="origin-input" class="controls" type="text" placeholder="Enter starting point" style="margin-top: 0px">
             <button id="originPlace" style="float:right; cursor:pointer;" title="Fill your current location" onclick="document.getElementById('origin-input').value = myAddress; autocomplete.originPlaceId = myAddressID;"></button>
@@ -340,27 +345,27 @@
 
             <div id="mode-selector" class="controls" style="background-color: white;color: black; max-width: 70%,">
                 <input type="radio" name="type" id="changemode-transit" checked="checked">
-                <label for="changemode-transit" style="font-size: 16px">PTV</label>
+                <label for="changemode-transit" style="font-size: 10px">PTV</label>
 
                 <input type="radio" name="type" id="changemode-driving">
-                <label for="changemode-driving" style="font-size: 16px">Driving</label>
+                <label for="changemode-driving" style="font-size: 10px">Driving</label>
             </div>
 
 
-            <label for="type" style="align-content: space-around;font-size: 16px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px">Select Childcare type</label>
+            <label for="type" style="align-content: space-around;font-size: 10px;font-family: sans-serif;color: dimgray;padding-left: 10px;padding-top: 10px">Select Childcare type</label>
 
             <select id="type" class="controls" style="margin-top: 0px" onchange="markerCategory = this.value; filterMarkers(this.value, postcodeInfo, qualityStandard, markerCluster, reset);">
-            <option value="" selected>All Categories</option>
+            <option value="" selected>All Childcare Type</option>
             <option value="Centre">Centre Based Care</option>
             <option value="Family">Family Day Care</option>
             </select>
 
 
-            <label for="rating" style="font-size: 16px;font-family: sans-serif;color: dimgray;padding-left: 10px;margin-top: 20px ">Select Childcare rating</label>
-            <label for="rating" style="font-size: 16px;font-family: sans-serif;color: dimgray;padding-left: 10px; ">NQS - National Quality Standard</label>
+            <label for="rating" style="font-size: 10px;font-family: sans-serif;color: dimgray;padding-left: 10px;margin-top: 20px ">Select Childcare rating</label>
+            <label for="rating" style="font-size: 10px;font-family: sans-serif;color: dimgray;padding-left: 10px; ">NQS - National Quality Standard</label>
 
             <select id="rating" class="controls" style="margin-top: 0px" onchange="reset = false;  qualityStandard = this.value; filterMarkers(markerCategory, postcodeInfo, this.value, markerCluster, reset);">
-            <option value="" selected>All Categories</option>
+            <option value="" selected>All Quality Standard</option>
             <option value="Exceeding">Exceeding NQS</option>
             <option value="Meeting">Meeting NQS</option>
             <option value="Not">Not Meeting NQS</option>
@@ -369,7 +374,8 @@
 
         </div>
         <div id="map" style="  height:92%; float:left; width: 57%; background-color:silver; padding: 10px; margin-right: 1%;  margin-left: 1%; margin-bottom: 1%; align-content: center"></div>
-        <div id="list" class="listdiv"></div>
+        <div id="listCompare" class="listdiv" style="height:16%;"></div>
+        <div id="list" class="listdiv" style = "height:76%; top: 0px"></div>
 
 
 
@@ -384,12 +390,14 @@
         <script>
 
             //Redirect function
-
+            // $('#childcare').find('span').remove();
             function redirect(service) {
                 //window.location.href = "https://helpinghandsmelbourne.azurewebsites.net/surajVERSION/hhtest2/DataFromDatabase/index.php?pm="+service;
                 window.open("https://helpinghandsmelbourne.azurewebsites.net/mapApp/DataFromDatabase/index.php?pm=" + service, '_blank');
 
             }
+            document.getElementById('listCompare').innerHTML += '<br>' + "<button type='button' title = 'Click here to compare the child cares that you have choses' class='listButton2' onclick='compare(" + ")' > Compare List </button>";
+            document.getElementById('listCompare').innerHTML += "<button type='button' title = 'Click here to restart the list' class='listButton2' onclick='clearList(" + ")' > Clear List </button>";
             var orgButton = document.getElementById("originPlace");
             orgButton.innerHTML = '<img src="' + "ic.png" + '"> ';
             var subButton = document.getElementById("suburbPlace");
@@ -422,6 +430,7 @@
             // Global Variable for getName;
             var resetName;
             // compare function
+            var target;
 
             function compare() {
                 var arrayLength = compareList.length;
@@ -550,7 +559,10 @@
                 while (cont) {
                     if (childCareCode == String(markers[i].serviceCode)) {
                         //console.log(markers[markernow].name);
+                        clusMarkers = [];
+                        clusMarkers.push(markers[i]);
                         cont = false;
+                        writeList();
                         google.maps.event.trigger(markers[i], 'click');
                     }
                     i++;
@@ -626,29 +638,28 @@
                 var count = 0;
 
                 if (document.getElementById("list") != null) {
-                    compareList = [];
-                    document.getElementById('list').innerHTML += '<br>' + "<button type='button' title = 'Click here to compare the child cares that you have choses' class='listButton2' onclick='compare(" + ")' > Compare List </button>";
-                    document.getElementById('list').innerHTML += "<button type='button' title = 'Click here to restart the list' class='listButton2' onclick='clearList(" + ")' > Clear List </button>";
-                    document.getElementById('list').innerHTML += '<hr></hr>';
+                    // compareList = [];
+
+                    // document.getElementById('list').innerHTML += '<hr></hr>';
                     while (clusMarkers[count] != null) {
 
 
-                        document.getElementById('list').innerHTML += '<div id = ' + clusMarkers[count].serviceCode + '><p style = "font-size:14px">';
-
-                        document.getElementById('list').innerHTML += "<u href=# class='listTitle'  onclick='getNameReactive(" + '"' + clusMarkers[count].serviceCode + '"' + ")'> " + '' + clusMarkers[count].name + '' + "</a>";
+                        document.getElementById('list').innerHTML += '<div id = ' + clusMarkers[count].serviceCode + '>';
+                        document.getElementById(clusMarkers[count].serviceCode).innerHTML += '<p style = "font-size:14px">'; 
+                        document.getElementById(clusMarkers[count].serviceCode).innerHTML += "<u href=# class='listTitle'  onclick='getNameReactive(" + '"' + clusMarkers[count].serviceCode + '"' + ")'> " + '' + clusMarkers[count].name + '' + "</a>";
                         if (clusMarkers[count].contactNum) {
-                            document.getElementById('list').innerHTML += '<br>' + clusMarkers[count].contactNum +
+                            document.getElementById(clusMarkers[count].serviceCode).innerHTML += '<br>' + clusMarkers[count].contactNum +
                                 '<br>' + clusMarkers[count].address + '<br>';
                         } else {
-                            document.getElementById('list').innerHTML += '<br>' + clusMarkers[count].address + '<br>';
+                            document.getElementById(clusMarkers[count].serviceCode).innerHTML += '<br>' + clusMarkers[count].address + '<br>';
                         }
 
                         // document.getElementById('list').innerHTML += "<button onclick='alert(" + '"' + clusMarkers[count].serviceCode + '"' + ")'> Show more</button></p>";
-                        document.getElementById('list').innerHTML += "<button type='button' class='listButton1' onclick='redirect(" + '"' + clusMarkers[count].serviceCode + '"' + ")' > View details</button>";
-                        document.getElementById('list').innerHTML += "<button type='button' class='listButton2' onclick='compareListpush(" + '"' + clusMarkers[count].serviceCode + '"' + ")'> Add to compare list</button>";
+                        document.getElementById(clusMarkers[count].serviceCode).innerHTML += "<button type='button' class='listButton1' onclick='redirect(" + '"' + clusMarkers[count].serviceCode + '"' + ")' > View details</button>";
+                        document.getElementById(clusMarkers[count].serviceCode).innerHTML += "<button type='button' class='listButton2' onclick='compareListpush(" + '"' + clusMarkers[count].serviceCode + '"' + ")'> Add to compare list</button>";
 
-                        document.getElementById('list').innerHTML += "<button type='button' class='listButton3' onclick='calculateAndDisplayRoute(clusMarkers[ " + '"' + count + '"' + "])'> Add to route</button></p>";
-                        document.getElementById('list').innerHTML += '<hr></hr></div>';
+                        document.getElementById(clusMarkers[count].serviceCode).innerHTML += "<button type='button' class='listButton3' onclick='calculateAndDisplayRoute(clusMarkers[ " + '"' + count + '"' + "])'> Add to route</button></p><hr>";
+                        document.getElementById('list').innerHTML += '</div>';
                         count++;
                     }
                 }
@@ -791,9 +802,13 @@
                             // check whether the div element exist
                             $(document).ready(function() {
                                 if ($('#' + location.ServiceApprovalNumber).length) {
-                                    var target = document.getElementById(location.ServiceApprovalNumber);
+                                    if (target){
+                                        target.style.backgroundColor = "";
+                                    }
+                                    target = document.getElementById(location.ServiceApprovalNumber);
                                     //$('#' + location.ServiceApprovalNumber).css('background-color', "yellow");
                                     //target.style.backgroundColor = "yellow";
+                                    document.getElementById(location.ServiceApprovalNumber).style.backgroundColor = "yellow";
                                     target.parentNode.scrollTop = target.offsetTop - target.parentNode.offsetTop;
 
                                 }
@@ -876,7 +891,7 @@
                         });
                     }, function() {
                         handleLocationError(true, infoWindow, map.getCenter());
-                    });
+                    }, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
                 } else {
                     // Browser doesn't support Geolocation
                     handleLocationError(false, infoWindow, map.getCenter());

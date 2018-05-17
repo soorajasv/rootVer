@@ -7,6 +7,7 @@
     var childcare1 = String(name[2]);
     console.log(childcare1);
     console.log(compareList);
+    console.log("Start!");
     
 </script>
 
@@ -23,20 +24,44 @@ if(count($serv)== 3)
 if(count($serv)== 4)
     $a = 23;
 
-
 echo '<section class="container">';
+echo '
+
+
+        <center>
+        <h2>Comparison Table</h2>
+          <table class="paleBlueRows" id="compareTable">
+                  <tr>
+                    <td class="tableHead"><span class="columnName">Name</span></td>
+                    <td class="tableHead"><span class="columnName">Service Provider</span></td>
+                    <td class="tableHead"><span class="columnName">Type</span></td>
+                    <td class="tableHead"><span class="columnName">Suburb</span></td>
+                    <td class="tableHead"><span class="columnName">PostCode</span></td>
+                    <td class="tableHead"><span class="columnName">Address</span></td>
+                    <td class="tableHead"><span class="columnName">ApprovalNumber</span></td>
+                    <td class="tableHead"><span class="columnName">Number Of Available Spaces</span></td>
+                    <td class="tableHead"><span class="columnName">NQR:Educational program and practice</span></td>
+                    <td class="tableHead"><span class="columnName">NQR:Children health and safety</span></td>
+                    <td class="tableHead"><span class="columnName">NQR:Physical environment</span></td>
+                    <td class="tableHead"><span class="columnName">NQR:Staffing arrangements</span></td>
+                    <td class="tableHead"><span class="columnName">NQR:Relationships with children</span></td>
+                    <td class="tableHead"><span class="columnName">NQR:Collaborative partnership</span></td>
+                    <td class="tableHead"><span class="columnName">NQR:Governance and leadership</span></td>
+                    <td class="tableHead"><span class="columnName">Overall Rating:</span></td>
+                    <td class="tableHead"><span class="columnName">Rating Issued:</span></td>
+                    <td class="tableHead"><span class="columnName">Opening Hours:Mon</span></td>
+                    <td class="tableHead"><span class="columnName">Opening Hours:Tue</span></td>
+                    <td class="tableHead"><span class="columnName">Opening Hours:Wed</span></td>
+                    <td class="tableHead"><span class="columnName">Opening Hours:Thu</span></td>
+                    <td class="tableHead"><span class="columnName">Opening Hours:Fri</span></td>
+                    <td class="tableHead"><span class="columnName">Opening Hours:Sat</span></td>
+                    <td class="tableHead"><span class="columnName">Opening Hours:Sun</span></td>
+                    <td class="tableHead"><span class="columnName">Phone Number</span></td>
+                    <td class="tableHead"><span class="columnName">E-mail</span></td>
+                  </tr>';
 
 for($i=0;$i< count($serv);$i++ )
 {
-    
-    
-   // $a= $a+20;
-    
-    
-    
-
-
-
     header("Content-type: text/html; charset=utf-8；Access-Control-Allow-Origin: *");
     include  "config.php";
     $data = array();
@@ -59,131 +84,122 @@ for($i=0;$i< count($serv);$i++ )
     
 
     if ($ret->num_rows > 0) {
-        echo '<body>
         
-        <div  style="padding=20px;width:'.$a.'%;float : left;left :'.$a*($i).'%;position : fixed;top : 30px;"><table>';
-        while ($row = $ret->fetch_assoc()) { 
-            
-           echo '<center><div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Service Details</h2>
-            <hr class="my-4">
-            <p class="mb-5"><b>Name</b> : '.$row['ServiceName'].'<br>
-            <b>Type</b> : '.$row['ServiceType'].'<br>
-            <b>Address</b> : '.$row['ServiceAddress'].'<br>
-            <b>Approval Number</b> : '.$row['ServiceApprovalNumber'].'
-            </p>
-            
-          </div>
-        </div>';
-            
-            echo '<div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading"> Quality Rating</h2>
-            <hr class="my-4">
-            <p class="mb-5"><b>National Quality Standard Area1 rating</b> : '.$row['QualityArea1Rating'].'<br></p>
-            
+        while ($row = $ret->fetch_assoc()) {
+                $Monday =  "No Information Available";
+        $Tuesday =  "No Information Available";
+        $Wednesday =  "No Information Available";
+        $Thursday =  "No Information Available";
+        $Friday =  "No Information Available";
+        $Saturday =  "No Information Available";
+        $Sunday =  "No Information Available";
 
-             </div>
-        </div>';
+        if ($row['School Terms Only Session 1 Monday Start Time'] != NULL) {
+            $Monday =   $row['School Terms Only Session 1 Monday Start Time'] . ' - ' . $row['School Terms Only Session 1 Monday End Time'];
+        }
+        if ($row['School Terms Only Session 1 Tuesday Start Time'] != NULL) {
+            $Tuesday =  $row['School Terms Only Session 1 Tuesday Start Time'] . ' - ' . $row['School Terms Only Session 1 Tuesday End Time'];
+        }
+        if ($row['School Terms Only Session 1 Wednesday Start Time'] != NULL) {
+            $Wednesday =  $row['School Terms Only Session 1 Wednesday Start Time'] . ' - ' . $row['School Terms Only Session 1 Wednesday End Time'];
+        }
+        if ($row['School Terms Only Session 1 Thursday Start Time'] != NULL) {
+            $Thursday = $row['School Terms Only Session 1 Thursday Start Time'] . ' - ' . $row['School Terms Only Session 1 Thursday End Time'];
+        }
+        if ($row['School Terms Only Session 1 Friday Start Time'] != NULL) {
+            $Friday = $row['School Terms Only Session 1 Friday Start Time'] . ' - ' . $row['School Terms Only Session 1 Friday End Time'];
+        }
+        if ($row['School Terms Only Session 1 Saturday Start Time'] != NULL) {
+            $Saturday = $row['School Terms Only Session 1 Saturday Start Time'] . ' - ' . $row['School Terms Only Session 1 Satuday End Time'];
+        }
+        if ($row['School Terms Only Session 1 Sunday Start Time'] != NULL) {
+            $Sunday =  $row['School Terms Only Session 1 Sunday Start Time'] . ' - ' . $row['School Terms Only Session 1 Sunday End Time'];
+        }
+
+        $NumberOfApprovedPlaces = "No Information Available";
+        $QualityArea1Rating = "No Information Available";
+        $QualityArea2Rating = "No Information Available";
+        $QualityArea3Rating = "No Information Available";
+        $QualityArea4Rating = "No Information Available";
+        $QualityArea5Rating = "No Information Available";
+        $QualityArea6Rating = "No Information Available";
+        $QualityArea7Rating = "No Information Available";
+        $OverallRating = "No Information Available";
+        $RatingsIssued = "No Information Available";
+        $Phone = "No Information Available";
+        $Email = "No Information Available";
+
+        if ($row['NumberOfApprovedPlaces'] != NULL) {
+            $NumberOfApprovedPlaces =   $row['NumberOfApprovedPlaces'];
+        }
+        if ($row['QualityArea1Rating'] != NULL) {
+            $QualityArea1Rating =  $row['QualityArea1Rating'];
+        }
+        if ($row['QualityArea2Rating'] != NULL) {
+            $QualityArea2Rating =  $row['QualityArea2Rating'];
+        }
+        if ($row['QualityArea3Rating'] != NULL) {
+            $QualityArea3Rating = $row['QualityArea3Rating'];
+        }
+        if ($row['QualityArea4Rating'] != NULL) {
+            $QualityArea4Rating = $row['QualityArea4Rating'];
+        }
+        if ($row['QualityArea5Rating'] != NULL) {
+            $QualityArea5Rating = $row['QualityArea5Rating'];
+        }
+        if ($row['QualityArea6Rating'] != NULL) {
+            $QualityArea6Rating =  $row['QualityArea6Rating'];
+        }
+        if ($row['QualityArea7Rating'] != NULL) {
+            $QualityArea7Rating =  $row['QualityArea7Rating'];
+        }
+        if ($row['OverallRating'] != NULL) {
+            $OverallRating =  $row['OverallRating'];
+        }
+        if ($row['RatingsIssued'] != NULL) {
+            $RatingsIssued =  $row['RatingsIssued'];
+        }
+        if ($row['Phone'] != NULL) {
+            $Phone =  $row['Phone'];
+        }
+        if ($row['Email Address'] != NULL) {
+            $Email =  $row['Email Address'];
+        }
+
+            echo'
+            <tr>
+              <td class="tableHead"><span class="columnName">'.$row['ServiceName'].'</span></td>
+              <td>'.$row['ProviderLegalName'].'</td>
+              <td>'.$row['ServiceType'].'</td>
+              <td>'.$row['Suburb'].'</td>
+              <td>'.$row['Postcode'].'</td>
+              <td>'.$row['ServiceAddress'].'</td>
+              <td>'.$row['ServiceApprovalNumber'].'</td>
+              <td>'.$NumberOfApprovedPlaces.'</td>
+              <td>' . $QualityArea1Rating . '</td>
+              <td>' . $QualityArea2Rating . '</td>
+              <td>' . $QualityArea3Rating . '</td>
+              <td>' . $QualityArea4Rating . '</td>
+              <td>' . $QualityArea5Rating . '</td>
+              <td>' . $QualityArea6Rating . '</td>
+              <td>' . $QualityArea7Rating . '</td>
+              <td>' . $OverallRating . '</td>
+              <td>' . $RatingsIssued . '</td>
+              <td>' . $Monday . '</td>
+              <td>' . $Tuesday . '</td>
+              <td>' . $Wednesday . '</td>
+              <td>' . $Thursday . '</td>
+              <td>' . $Friday . '</td>
+              <td>' . $Saturday . '</td>
+              <td>' . $Sunday . '</td>
+              <td>'.$row['Phone'].'</td>
+              <td>'.$row['Email Address'].'</td>
+            </tr>
+            ';            
             
-            
-             echo '<div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Address</h2>
-            <hr class="my-4">
-            <p class="mb-5"><b>State</b> : '.$row['State'].'<br>
-            <b>Suburb</b> : '.$row['Suburb'].'<br>
-            <b>Post Code</b> : '.$row['PostCode'].'
-            </p>
-            
-          </div>
-        </div>';
-            
-            
-            
-            echo '<div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Contact</h2>
-            <hr class="my-4">
-            <p class="mb-5">Contact Childcare center for any further details</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>'.$row['Phone'].'</p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
-            <p>
-              '.$row['Email Address'].'
-            </p>
-          </div>
-        </div>
-      </div></center>';
-            
-            
-            
-            
-            
-      
-          /*  echo '<tr><td><b> Phone</b></td><td>'.$row['Phone'].'</td></tr>';
-            
-            echo '<tr><td><b> Email</b></td><td>'.$row['Email Address'].'</td></tr>';
-           
-            echo '<tr><td>MON</td>';
-            if($row['School Terms Only Session 1 Monday Start Time']!= NULL)
-                { echo '<td>'.$row['School Terms Only Session 1 Monday Start Time'].' - '.$row['School Terms Only Session 1 Monday End Time'].'</td>';}
-                 else
-                 {echo "<td>N/A</td></tr>";}
-            echo '<tr><td>TUES</td>';
-            if($row['School Terms Only Session 1 Tuesday Start Time']!= NULL)
-                { echo '<td>'.$row['School Terms Only Session 1 Tuesday Start Time'].' - '.$row['School Terms Only Session 1 Tuesday End Time'].'</td>';}
-                 else
-                 {echo "<td>N/A</td></tr>";}
-            echo '<tr><td>WED</td>';    
-            if($row['School Terms Only Session 1 Wednesday Start Time']!= NULL)
-                { echo '<td>'.$row['School Terms Only Session 1 Wednesday Start Time'].' - '.$row['School Terms Only Session 1 Wednesday End Time'].'</td>';}
-                 else
-                 {echo "<td>N/A</td></tr>";}
-            echo '<tr><td>THU</td>';
-            if($row['School Terms Only Session 1 Thursday Start Time']!= NULL)
-                { echo '<td>'.$row['School Terms Only Session 1 Thursday Start Time'].' - '.$row['School Terms Only Session 1 Thursday End Time'].'</td>';}
-                 else
-                 {echo "<td>N/A</td></tr>";}
-            echo '<tr><td>FRI</td>';
-            if($row['School Terms Only Session 1 Friday Start Time']!= NULL)
-                { echo '<td>'.$row['School Terms Only Session 1 Friday Start Time'].' - '.$row['School Terms Only Session 1 Friday End Time'].'</td>';}
-                 else
-                 {echo "<td>N/A</td></tr>";}
-            echo '<tr><td>SAT</td>';
-            if($row['School Terms Only Session 1 Saturday Start Time']!= NULL)
-                { echo '<td>'.$row['School Terms Only Session 1 Saturday Start Time'].' - '.$row['School Terms Only Session 1 Satuday End Time'].'</td>';}
-                 else
-                 {echo "<td>N/A</td></tr>";}
-            echo '<tr><td>SUN</td>';
-            if($row['School Terms Only Session 1 Sunday Start Time']!= NULL)
-                { echo '<td>'.$row['School Terms Only Session 1 Sunday Start Time'].' - '.$row['School Terms Only Session 1 Sunday End Time'].'</td>';}
-                 else
-                 {echo "<td>N/A</td></tr>";}
-                 
-                 */
-            
-            
-         $data[] = $row;
-        
-        echo '</table></div>';
-        echo '</body>';
-        
-       
-        
+         $data[] = $row;      
     }
-    //echo $data;
 
-    //echo json_encode($return);
-    
     
     
 }
@@ -191,27 +207,89 @@ for($i=0;$i< count($serv);$i++ )
    // for loop ending 
     
 }
-
+echo '
+  </table>
+  <span>NQR: National Quality Rating</span>
+  <br>
+  <span>NQS: National Quality Standard</span>
+  <br>
+  </center>';
 echo '</section>';
-
     $conn->close(); 
-
-
-
-
- 
       
 ?>
 
+
 <html>
-        <style>
-            .container1{
-                width: 90%;
-                height: 700px;
-                margin: auto;
-                padding: 10px;
-            }    
+  <style>
+    .tableHead{
+      background: #0B6FA4;
+      border: 5px solid #FFFFFF;
+    }
 
-        </style>
+    table.paleBlueRows {
+      font-family: "Times New Roman", Times, serif;
+      border: 1px solid #FFFFFF;
+      text-align: center;
+      border-collapse: collapse;
+    }
 
+    table.paleBlueRows td, table.paleBlueRows th {
+      border: 1px solid #FFFFFF;
+      padding: 3px 2px;
+    }
+
+    table.paleBlueRows tbody td {
+      font-size: 13px;
+    }
+
+    table.paleBlueRows tr:nth-child(odd) {
+      background: #D0E4F5;
+    }
+
+    table.paleBlueRows thead th:first-child {
+      border-left: none;
+    }
+/*    table, th, td {
+      border: 1px solid black;
+    }*/
+            
+    .container1{
+      width: 90%;
+      height: 700px;
+      margin: auto;
+      padding: 10px;
+    }    
+
+    .columnName{
+      color: white;
+      font-weight: bold; 
+    }
+  </style>
+
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    <script >
+        $("#compareTable").each(function() {
+        var $this = $(this);
+        var newrows = [];
+        $this.find("tr").each(function(){
+            var i = 0;
+            $(this).find("td").each(function(){
+                i++;
+                if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
+                newrows[i].append($(this));
+            });
+        });
+        $this.find("tr").remove();
+        $.each(newrows, function(){
+            $this.append(this);
+        });
+        console.log("Rotate!");
+      }); 
+    </script>
+  </head>
+  <body>
+  
+  </body>
 </html>

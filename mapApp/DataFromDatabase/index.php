@@ -137,13 +137,13 @@ if ($ret->num_rows > 0) {
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading"> Quality Rating</h2>
             <hr class="my-4">
-            <p class="mb-5"><b>National Quality Standard Area 1 rating</b> : ' . $QualityArea1Rating . '<br>
-            <b>National Quality Standard Area 2 rating</b> : ' . $QualityArea2Rating . '<br>
-            <b>National Quality Standard Area 3 rating</b> : ' . $QualityArea3Rating . '<br>
-            <b>National Quality Standard Area 4 rating</b> : ' . $QualityArea4Rating . '<br>
-            <b>National Quality Standard Area 5 rating</b> : ' . $QualityArea5Rating . '<br>
-            <b>National Quality Standard Area 6 rating</b> : ' . $QualityArea6Rating . '<br>
-            <b>National Quality Standard Area 7 rating</b> : ' . $QualityArea7Rating . '<br>
+            <p class="mb-5"><b>Educational program and practice</b> : ' . $QualityArea1Rating . '<br>
+            <b>Children health and safety</b> : ' . $QualityArea2Rating . '<br>
+            <b>Physical environment</b> : ' . $QualityArea3Rating . '<br>
+            <b>Staffing arrangements</b> : ' . $QualityArea4Rating . '<br>
+            <b>Relationships with children</b> : ' . $QualityArea5Rating . '<br>
+            <b>Collaborative partnership</b> : ' . $QualityArea6Rating . '<br>
+            <b>Governance and leadership</b> : ' . $QualityArea7Rating . '<br>
             <b>Overall Rating</b> : ' . $OverallRating . '<br>
             <b>Rating Issued</b> : ' . $RatingsIssued . '<br></p>
              </div>
